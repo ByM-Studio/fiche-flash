@@ -1,14 +1,22 @@
-import { createClient } from '@base44/sdk';
 import { appParams } from '@/lib/app-params';
 
-const { appId, token, functionsVersion, appBaseUrl } = appParams;
+const { appId, appBaseUrl } = appParams;
 
-//Create a client with authentication required
-export const base44 = createClient({
+const BASE_URL = appBaseUrl || `https://api.base44.com/api/apps/${appId}`;
+
+export const base44 = {
   appId,
-  token,
-  functionsVersion,
-  serverUrl: '',
-  requiresAuth: false,
-  appBaseUrl
-});
+  baseUrl: BASE_URL,
+  auth: {
+    getUser: async () => null,
+    login: async () => {},
+    logout: async () => {},
+  },
+  api: async (path, options = {}) => {
+    const res = await fetch(`${BASE_URL}${path}`, {
+      headers: { 'Content-Type': 'application/json' },
+      ...options,
+    });
+    return res.json();
+  }
+};
