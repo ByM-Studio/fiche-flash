@@ -1,0 +1,49 @@
+{
+  "name": "ReadyCardPack",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Titre du pack"
+    },
+    "subject": {
+      "type": "string",
+      "enum": [
+        "Maths",
+        "Physique",
+        "SVT",
+        "Histoire-G\u00e9o",
+        "Fran\u00e7ais",
+        "Philo",
+        "SES",
+        "NSI",
+        "Anglais",
+        "Sp\u00e9 autres"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "Seconde",
+        "Premi\u00e8re",
+        "Terminale"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "card_data": {
+      "type": "object",
+      "description": "Donn\u00e9es de la fiche structur\u00e9e (m\u00eame format que RevisionCard)"
+    },
+    "is_free": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "subject",
+    "level"
+  ]
+}

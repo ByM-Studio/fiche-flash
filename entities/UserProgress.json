@@ -1,0 +1,71 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "xp": {
+      "type": "number",
+      "default": 0,
+      "description": "Points d'exp\u00e9rience totaux"
+    },
+    "level": {
+      "type": "number",
+      "default": 1,
+      "description": "Niveau actuel"
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "IDs des badges d\u00e9bloqu\u00e9s"
+    },
+    "stats": {
+      "type": "object",
+      "description": "Statistiques d\u00e9taill\u00e9es",
+      "properties": {
+        "flashcards_done": {
+          "type": "number",
+          "default": 0
+        },
+        "flashcards_known": {
+          "type": "number",
+          "default": 0
+        },
+        "exams_done": {
+          "type": "number",
+          "default": 0
+        },
+        "fiches_generated": {
+          "type": "number",
+          "default": 0
+        },
+        "perfect_exams": {
+          "type": "number",
+          "default": 0
+        },
+        "maths_fiches": {
+          "type": "number",
+          "default": 0
+        },
+        "philo_fiches": {
+          "type": "number",
+          "default": 0
+        },
+        "histoire_fiches": {
+          "type": "number",
+          "default": 0
+        },
+        "streak_days": {
+          "type": "number",
+          "default": 0
+        },
+        "last_activity_date": {
+          "type": "string",
+          "default": ""
+        }
+      }
+    }
+  },
+  "required": []
+}
